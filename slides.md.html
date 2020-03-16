@@ -1,36 +1,45 @@
 <meta charset="utf-8" lang="en">
-
-<div class=ignore>
 <table width="60%" align="center">
 <tbody>
 <tr>
 <td width="20%" style="border-right: 0.2em solid #BBBBFF"><img src="https://www.uniba.it/immagini/logo-uniba-a-colori" width="80%" /></td>
 <td>
-<p>Universit&agrave; degli Studi di Bari<br /> Facolt&agrave; di Scienze MM. FF. NN.<br /> Dipartimento di Informatica</p>
+<p>Universit&agrave; degli Studi di Bari<br /> Dipartimento di Informatica</p>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="title">RAPPRESENTAZIONE DI CONCETTI INCERTI IN ROUGH DL</div>
 
-<p align="center"><br><br><strong>RAPPRESENTAZIONE DI CONCETTI INCERTI IN ROUGH DL</strong><br><br></p>
-
-<p><strong>Relatore:</strong> Chiar.mo Prof. Nicola FANIZZI</p>
-<p><strong>Co-relatrice:</strong> Chiar.ma Prof.ssa Claudia D'AMATO</p>
+<p align="right">Gianfranco DAMATO (597413)</p>
+<div class="author" align="right">**Relatore**: Chiar.mo Prof. Nicola FANIZZI<br>
+**Co-relatrice**: Chiar.ma Prof.ssa Claudia D'AMATO</div>
 <small><em><span class="current-date"></span></em></small><br>
-Gianfranco DAMATO (597413)
-</div>
 
 ---
 
-# Introduzione
+# Il Contesto: Semantic Web e Ontologie
 
 ---
 
-## Ontologie e Semantic Web
+## Semantic Web e Ontologie
+
+### Il Semantic Web
+
+La trasformazione del World Wide Web in un ambiente dove le informazioni disponibili siano interpretabili a livello di significato (semanticamente).
+
+![](./img/tag-cloud.png width="65%")
+
+---
+
+## Semantic Web e Ontologie
 
 ### Che cos'è un'ontologia?
 
-![Esempio di ontologia](./img/grafo_onto.png width="50%") "Una rappresentazione formale, condivisa ed esplicita di una concettualizzazione di un dominio di interesse caratterizzata da un elevata espressività semantica, necessaria per una maggiore complessità.[^quote-onto] "
+![Esempio di ontologia](./img/grafo_onto.png width="50%") <p> 
+> "Una rappresentazione formale, condivisa ed esplicita di una concettualizzazione di un dominio di interesse caratterizzata da un elevata espressività semantica, necessaria per una maggiore complessità."
+>
+</p>
 
 >>> Utilizzi:
 >>>
@@ -39,42 +48,259 @@ Gianfranco DAMATO (597413)
 >>> * Accesso semantico ai dati (OBDA)
 
 ---
+## Semantic Web e Ontologie
 
-## Ontologie e Semantic Web
+### Description Logic
 
-### Semantic Web
+* Una famiglia di linguaggi formali per la rappresentazione di conoscenza
 
-La trasformazione del World Wide Web in un ambiente dove le informazioni disponibili siano interpretabili a livello di significato (semanticamente).
+* Composta da *concetti*, *individui* e *relazioni*
 
-![](./img/tag-cloud.png)
+* Usate per descrivere e ragionare sui concetti in un dominio di applicazione
+
+
+>>>	* Compromesso fra FOL e Proposizionale
+>>> 
+>>>
+
+---
+
+# Il Problema: Conoscenza incerta
 
 ---
 
 ## Conoscenza incerta
 
-### Problema intrinseco
+### La conoscenza nel mondo reale non è sempre nettamente definita.
+* Conoscenza vaga, incompleta, inconsistente...
 
-* La conoscenza reale non è sempre nettamente definita
-	* Es. : [fare esempi qui]
+### Diversi meccanismi per la trattazione
+* Approcci basati su logica fuzzy
+
+* Approcci probabilistici
+
+* Approcci basati sulla teoria dei **rough set**
 	
-* Diversi meccanismi per la trattazione
-	* Logica Fuzzy
-	* Approcci probabilistici
-	* Teoria dei **rough set**
-	
+
+>>> * Fare esempi
+>>> 
+>>>
+>>> * Nell'ambito degli approcci basati sui rough set...
+
+---
+
+## Conoscenza incerta
+$\newcommand{\vagcon}{\mathsf{C}}$
+
+### Rough DL (Schlobach et al., 2007)
+
+![Esempio di approssimazione rough](./img/rough.png width="35%")<p>
+* Un estensione delle tradizionali DL basata su una relazione di indiscernibilità;
+
+* Concetto vago $\vagcon$ espresso come coppia di approssimazioni $(\underline{\vagcon}, \overline{\vagcon})$;
+
+* $\overline{\vagcon}$: approssimazione superiore;
+
+* $\underline{\vagcon}$: approssimazione inferiore.
+</p>
 
 >>>
->>> * Uno dei problemi del web semantico è...
+>>> * Inf è definitivamente
+>>> * Sup è possibilmente
+>>> * Non aumento di espressività
+
+---
+
+## Conoscenza incerta
+
+### Come modellare i concetti incerti
+
+È possibile delineare due approcci:
+
+* Ricerca per **contesto**
+
+* Ricerca per **estensione**
+
+Poiché a volte può essere difficile trovare il giusto contesto, modellare un concetto vago elencando gli individui appartenenti ad esso risulta più facile.
+
 >>>
+>>> Spiega cosa è il contesto
 >>>
 
 ---
 
-## Rough DL
+# La Soluzione: Approssimazione per similarità
 
-* Un estensione delle tradizionali DL
-* Basata sulla similarità fra individui
-* Nessun aumento di espressività => simulabile con una DL tradizionale
+---
+
+## Descrizione della soluzione
+
+### Cosa si vuole ottenere?
+L'approssimazione superiore e l'approssimazione inferiore di un concetto vago modellato per estensione.
+
+### Con quale metodo?
+Algoritmo implementato in Python che, data un'enumerazione di individui e un'ontologia, apprenda una relazione di similarità che permetta di usare i meccanismi della Rough DL.
+
+![Passaggi dell'algoritmo](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIFxuXG4gIHNlbCAtLT4gcHJvaiAtLT4gcGNhIC0tPiBzdm0gLS0-IGFwcHJ4XG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIiwiZmxvd2NoYXJ0Ijp7InJhbmtTcGFjaW5nIjoiMjUifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
+
+---
+
+## Descrizione della soluzione
+![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIHNlbCBmaWxsOiM2RkYsc3Ryb2tlOiMzMzMsc3Ryb2tlLXdpZHRoOjRweFxuXG4gIHNlbCAtLT4gcHJvaiAtLT4gcGNhIC0tPiBzdm0gLS0-IGFwcHJ4XG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIiwiZmxvd2NoYXJ0Ijp7InJhbmtTcGFjaW5nIjoiMjUifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
+### Selezione
+<p>
+Si selezionano tre sottoinsiemi:
+
+* $E^{+}$: individui che descrivono il concetto vago.
+
+* $E^{LCS}$: individui appartenenti al l.c.s. emergente da $E^{+}$
+
+* $E^{-}$: individui del complemento di $E^{LCS}$
+
+<hr class="ignore">
+<small>l.c.s. : Least Common Subsumer</small>
+
+</p>
+
+>>>
+>>> * escludo TOP e BOTTOM
+>>> * LCS = indiv con almeno un concetto direttamente espresso in comune
+>>>
+
+---
+
+## Descrizione della soluzione
+![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIHByb2ogZmlsbDojNkZGLHN0cm9rZTojMzMzLHN0cm9rZS13aWR0aDo0cHhcblxuICBzZWwgLS0-IHByb2ogLS0-IHBjYSAtLT4gc3ZtIC0tPiBhcHByeFxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCIsImZsb3djaGFydCI6eyJyYW5rU3BhY2luZyI6IjI1In19LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+### Proiezione
+
+<p>
+* $\pi_{F}(a) = \begin{cases}
+ & 1\text{ se } \mathcal{I}\models F(a) \\ 
+ & 0\text{ se } \mathcal{I}\models \lnot{F(a)} \\ 
+ & \frac{1}{2}\text{ se } \mathcal{I}\not\models F(a) \land \mathcal{I}\not\models \lnot{F(a)}
+\end{cases}$
+
+* Permette un approccio numerico al problema
+
+* Grafo -> Tabella
+
+<hr class="ignore">
+<small>*Introdotto in:* Fanizzi, Nicola ; D'Amato, Claudia ; Esposito, Floriana: *Randomized metric induction and evolutionary conceptual clustering for semantic knowledge bases* (2007)</small>
+</p>
+
+---
+
+## Descrizione della soluzione
+![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIHBjYSBmaWxsOiM2RkYsc3Ryb2tlOiMzMzMsc3Ryb2tlLXdpZHRoOjRweFxuXG4gIHNlbCAtLT4gcHJvaiAtLT4gcGNhIC0tPiBzdm0gLS0-IGFwcHJ4XG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIiwiZmxvd2NoYXJ0Ijp7InJhbmtTcGFjaW5nIjoiMjUifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
+### Scaling e PCA (Principal Component Analysis)
+
+<p>
+* Approssimazione di dimensione inferiore dello spazio iniziale.
+
+* Scaling applicato per *centrare* i dati intorno l'origine;
+
+* Componenti ortogonali fra di loro.
+
+* Tramite **whitening**, ogni componente ha varianza unitaria.
+</p>
+
+>>>
+>>> * si applica scaling...
+>>>
+
+---
+
+## Descrizione della soluzione
+![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIHN2bSBmaWxsOiM2RkYsc3Ryb2tlOiMzMzMsc3Ryb2tlLXdpZHRoOjRweFxuXG4gIHNlbCAtLT4gcHJvaiAtLT4gcGNhIC0tPiBzdm0gLS0-IGFwcHJ4XG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIiwiZmxvd2NoYXJ0Ijp7InJhbmtTcGFjaW5nIjoiMjUifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
+### Support Vector Machine a kernel lineare
+
+<p>
+* Training set: $E^{+} \cup E^{-}$
+
+* Si cerca l'iperpiano che massimizzi la distanza fra $E^{+}$ e $E^{-}$
+
+* Ci interessa solo la distanza dal margine all'iperpiano
+</p>
+
+
+---
+
+## Descrizione della soluzione
+![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIGFwcHJ4IGZpbGw6IzZGRixzdHJva2U6IzMzMyxzdHJva2Utd2lkdGg6NHB4XG5cbiAgc2VsIC0tPiBwcm9qIC0tPiBwY2EgLS0-IHN2bSAtLT4gYXBwcnhcblxuIiwibWVybWFpZCI6eyJ0aGVtZSI6Im5ldXRyYWwiLCJmbG93Y2hhcnQiOnsicmFua1NwYWNpbmciOiIyNSJ9fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
+### Ricerca delle approssimazioni
+
+Sia $d$ la distanza da un margine verso l'iperpiano.
+
+* Si cercano gli individui a distanza $d$ dagli esempi positivi;
+
+
+---
+
+## Descrizione della soluzione
+
+### Ricerca delle approssimazioni
+
+Sia $d$ la distanza da un margine verso l'iperpiano.
+
+* Si cercano gli individui a distanza $d$ dagli esempi positivi;
+
+* Di questi 
+
+---
+
+# Implementazione
+
+---
+
+## Implementazione
+
+### Linguaggio di implementazione
+Python 3.8
+
+### Librerie utilizzate
+
+* sci-kit
+* pandas
+* numpy
+* owlready2
+
+---
+
+## Implementazione
+
+### Software utilizzati
+
+* PyCharm (IDE per Python)
+* Protegé 5.5.0 (Editor di ontologie)
+* Pellet (Reasoner)
+
+---
+
+# Risultati
+
+>>>
+>>> Si presentano ora i risultati...
+>>>
+
+---
+
+## Risultati
+
+### Concetto "Selezione Personale"
+
+---
+
+## Risultati
+
+### Concetto "Adatto a dieta iposodica"
+
+---
+
+# Conclusioni
+
+---
+
+---
 
 ---
 
@@ -82,7 +308,7 @@ La trasformazione del World Wide Web in un ambiente dove le informazioni disponi
 <script>
     markdeepSlidesOptions = {
         aspectRatio: 16 / 9,
-        theme: 'simple',
+        theme: 'simple_mk2',
         fontSize: 28,
         diagramZoom: 1.0,
         totalSlideNumber: false,

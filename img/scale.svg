@@ -1,0 +1,505 @@
+<svg id="mermaid-1584207520586" width="193.578125" xmlns="http://www.w3.org/2000/svg" height="311" viewBox="0 0 193.578125 311"><style>
+
+
+
+#mermaid-1584207520586 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  color: #333; }
+
+#mermaid-1584207520586 .label text {
+  fill: #333; }
+
+#mermaid-1584207520586 .node rect,
+#mermaid-1584207520586 .node circle,
+#mermaid-1584207520586 .node ellipse,
+#mermaid-1584207520586 .node polygon,
+#mermaid-1584207520586 .node path {
+  fill: #eee;
+  stroke: #999;
+  stroke-width: 1px; }
+
+#mermaid-1584207520586 .node .label {
+  text-align: center; }
+
+#mermaid-1584207520586 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1584207520586 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1584207520586 .edgePath .path {
+  stroke: #666;
+  stroke-width: 1.5px; }
+
+#mermaid-1584207520586 .edgeLabel {
+  background-color: white;
+  text-align: center; }
+
+#mermaid-1584207520586 .cluster rect {
+  fill: #eaf2fb;
+  stroke: #26a;
+  stroke-width: 1px; }
+
+#mermaid-1584207520586 .cluster text {
+  fill: #333; }
+
+#mermaid-1584207520586 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 12px;
+  background: #eaf2fb;
+  border: 1px solid #26a;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1584207520586 .actor {
+  stroke: #999;
+  fill: #eee; }
+
+#mermaid-1584207520586 text.actor {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1584207520586 .actor-line {
+  stroke: #666; }
+
+#mermaid-1584207520586 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1584207520586 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1584207520586 #arrowhead {
+  fill: #333; }
+
+#mermaid-1584207520586 .sequenceNumber {
+  fill: white; }
+
+#mermaid-1584207520586 #sequencenumber {
+  fill: #333; }
+
+#mermaid-1584207520586 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1584207520586 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1584207520586 .labelBox {
+  stroke: #999;
+  fill: #eee; }
+
+#mermaid-1584207520586 .labelText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1584207520586 .loopText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1584207520586 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #999; }
+
+#mermaid-1584207520586 .note {
+  stroke: #777700;
+  fill: #ffa; }
+
+#mermaid-1584207520586 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 14px; }
+
+#mermaid-1584207520586 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1584207520586 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1584207520586 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1584207520586 .mermaid-main-font {
+  font-family: "trebuchet ms", verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1584207520586 .section0 {
+  fill: #80b3e6; }
+
+#mermaid-1584207520586 .section2 {
+  fill: #80b3e6; }
+
+#mermaid-1584207520586 .section1,
+#mermaid-1584207520586 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1584207520586 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1584207520586 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1584207520586 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1584207520586 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1584207520586 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+
+#mermaid-1584207520586 .grid .tick {
+  stroke: #e6e6e6;
+  opacity: 0.8;
+  shape-rendering: crispEdges; }
+#mermaid-1584207520586   .grid .tick text {
+    font-family: 'trebuchet ms', verdana, arial;
+    font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1584207520586 .today {
+  fill: none;
+  stroke: #d42;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1584207520586 .task {
+  stroke-width: 2; }
+
+#mermaid-1584207520586 .taskText {
+  text-anchor: middle;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 .taskText:not([font-size]) {
+  font-size: 11px; }
+
+#mermaid-1584207520586 .taskTextOutsideRight {
+  fill: #333;
+  text-anchor: start;
+  font-size: 11px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 .taskTextOutsideLeft {
+  fill: #333;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1584207520586 .task.clickable {
+  cursor: pointer; }
+
+#mermaid-1584207520586 .taskText.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1584207520586 .taskTextOutsideLeft.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1584207520586 .taskTextOutsideRight.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+
+#mermaid-1584207520586 .taskText0,
+#mermaid-1584207520586 .taskText1,
+#mermaid-1584207520586 .taskText2,
+#mermaid-1584207520586 .taskText3 {
+  fill: white; }
+
+#mermaid-1584207520586 .task0,
+#mermaid-1584207520586 .task1,
+#mermaid-1584207520586 .task2,
+#mermaid-1584207520586 .task3 {
+  fill: #26a;
+  stroke: #1a4d80; }
+
+#mermaid-1584207520586 .taskTextOutside0,
+#mermaid-1584207520586 .taskTextOutside2 {
+  fill: #333; }
+
+#mermaid-1584207520586 .taskTextOutside1,
+#mermaid-1584207520586 .taskTextOutside3 {
+  fill: #333; }
+
+
+#mermaid-1584207520586 .active0,
+#mermaid-1584207520586 .active1,
+#mermaid-1584207520586 .active2,
+#mermaid-1584207520586 .active3 {
+  fill: #eee;
+  stroke: #1a4d80; }
+
+#mermaid-1584207520586 .activeText0,
+#mermaid-1584207520586 .activeText1,
+#mermaid-1584207520586 .activeText2,
+#mermaid-1584207520586 .activeText3 {
+  fill: #333 !important; }
+
+
+#mermaid-1584207520586 .done0,
+#mermaid-1584207520586 .done1,
+#mermaid-1584207520586 .done2,
+#mermaid-1584207520586 .done3 {
+  stroke: #666;
+  fill: #bbb;
+  stroke-width: 2; }
+
+#mermaid-1584207520586 .doneText0,
+#mermaid-1584207520586 .doneText1,
+#mermaid-1584207520586 .doneText2,
+#mermaid-1584207520586 .doneText3 {
+  fill: #333 !important; }
+
+
+#mermaid-1584207520586 .crit0,
+#mermaid-1584207520586 .crit1,
+#mermaid-1584207520586 .crit2,
+#mermaid-1584207520586 .crit3 {
+  stroke: #b1361b;
+  fill: #d42;
+  stroke-width: 2; }
+
+#mermaid-1584207520586 .activeCrit0,
+#mermaid-1584207520586 .activeCrit1,
+#mermaid-1584207520586 .activeCrit2,
+#mermaid-1584207520586 .activeCrit3 {
+  stroke: #b1361b;
+  fill: #eee;
+  stroke-width: 2; }
+
+#mermaid-1584207520586 .doneCrit0,
+#mermaid-1584207520586 .doneCrit1,
+#mermaid-1584207520586 .doneCrit2,
+#mermaid-1584207520586 .doneCrit3 {
+  stroke: #b1361b;
+  fill: #bbb;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1584207520586 .milestone {
+  transform: rotate(45deg) scale(0.8, 0.8); }
+
+#mermaid-1584207520586 .milestoneText {
+  font-style: italic; }
+
+#mermaid-1584207520586 .doneCritText0,
+#mermaid-1584207520586 .doneCritText1,
+#mermaid-1584207520586 .doneCritText2,
+#mermaid-1584207520586 .doneCritText3 {
+  fill: #333 !important; }
+
+#mermaid-1584207520586 .activeCritText0,
+#mermaid-1584207520586 .activeCritText1,
+#mermaid-1584207520586 .activeCritText2,
+#mermaid-1584207520586 .activeCritText3 {
+  fill: #333 !important; }
+
+#mermaid-1584207520586 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: #333;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 g.classGroup text {
+  fill: #999;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 10px; }
+#mermaid-1584207520586   g.classGroup text .title {
+    font-weight: bolder; }
+
+#mermaid-1584207520586 g.clickable {
+  cursor: pointer; }
+
+#mermaid-1584207520586 g.classGroup rect {
+  fill: #eee;
+  stroke: #999; }
+
+#mermaid-1584207520586 g.classGroup line {
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #eee;
+  opacity: 0.5; }
+
+#mermaid-1584207520586 .classLabel .label {
+  fill: #999;
+  font-size: 10px; }
+
+#mermaid-1584207520586 .relation {
+  stroke: #999;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1584207520586 .dashed-line {
+  stroke-dasharray: 3; }
+
+#mermaid-1584207520586 #compositionStart {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 #compositionEnd {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 #aggregationStart {
+  fill: #eee;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 #aggregationEnd {
+  fill: #eee;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 #dependencyStart {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 #dependencyEnd {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 #extensionStart {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 #extensionEnd {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 .commit-id,
+#mermaid-1584207520586 .commit-msg,
+#mermaid-1584207520586 .branch-label {
+  fill: lightgrey;
+  color: lightgrey;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 .pieTitleText {
+  text-anchor: middle;
+  font-size: 25px;
+  fill: #333;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 .slice {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 g.stateGroup text {
+  fill: #999;
+  stroke: none;
+  font-size: 10px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1584207520586 g.stateGroup text {
+  fill: #999;
+  stroke: none;
+  font-size: 10px; }
+
+#mermaid-1584207520586 g.stateGroup .state-title {
+  font-weight: bolder;
+  fill: black; }
+
+#mermaid-1584207520586 g.stateGroup rect {
+  fill: #eee;
+  stroke: #999; }
+
+#mermaid-1584207520586 g.stateGroup line {
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1584207520586 .transition {
+  stroke: #999;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1584207520586 .stateGroup .composit {
+  fill: white;
+  border-bottom: 1px; }
+
+#mermaid-1584207520586 .stateGroup .alt-composit {
+  fill: #e0e0e0;
+  border-bottom: 1px; }
+
+#mermaid-1584207520586 .state-note {
+  stroke: #777700;
+  fill: #ffa; }
+#mermaid-1584207520586   .state-note text {
+    fill: black;
+    stroke: none;
+    font-size: 10px; }
+
+#mermaid-1584207520586 .stateLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #eee;
+  opacity: 0.5; }
+
+#mermaid-1584207520586 .stateLabel text {
+  fill: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+:root {
+  --mermaid-font-family: '"trebuchet ms", verdana, arial';
+  --mermaid-font-family: "Comic Sans MS", "Comic Sans", cursive; }
+
+:root { --mermaid-font-family: "trebuchet ms", verdana, arial;}</style><style>#mermaid-1584207520586 {
+    color: rgb(0, 0, 0);
+    font: 16px "trebuchet ms", verdana, arial;
+  }</style><g transform="translate(0, 0)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M96.7890625,47L96.7890625,59.5L96.7890625,72" marker-end="url(#arrowhead7026)" style="fill:none"></path><defs><marker id="arrowhead7026" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M96.7890625,111L96.7890625,123.5L96.7890625,136" marker-end="url(#arrowhead7027)" style="fill:none"></path><defs><marker id="arrowhead7027" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M96.7890625,175L96.7890625,187.5L96.7890625,200" marker-end="url(#arrowhead7028)" style="fill:none"></path><defs><marker id="arrowhead7028" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M96.7890625,239L96.7890625,251.5L96.7890625,264" marker-end="url(#arrowhead7029)" style="fill:none"></path><defs><marker id="arrowhead7029" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="proj" transform="translate(96.7890625,27.5)" style="opacity: 1;"><rect rx="19.5" ry="19.5" x="-52.1171875" y="-19.5" width="104.234375" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-37.2421875,-9.5)"><foreignObject width="74.484375" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Proiezione</div></foreignObject></g></g></g><g class="node" id="scale" transform="translate(96.7890625,91.5)" style="opacity: 1;"><rect rx="19.5" ry="19.5" x="-39.9140625" y="-19.5" width="79.828125" height="39" class="label-container" style="fill:#6FF;stroke:#333;stroke-width:4px;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-25.0390625,-9.5)"><foreignObject width="50.078125" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Scaling</div></foreignObject></g></g></g><g class="node" id="pca" transform="translate(96.7890625,155.5)" style="opacity: 1;"><rect rx="19.5" ry="19.5" x="-88.7890625" y="-19.5" width="177.578125" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-73.9140625,-9.5)"><foreignObject width="147.828125" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Decomposizione PCA</div></foreignObject></g></g></g><g class="node" id="svm" transform="translate(96.7890625,219.5)" style="opacity: 1;"><rect rx="19.5" ry="19.5" x="-53.890625" y="-19.5" width="107.78125" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-39.015625,-9.5)"><foreignObject width="78.03125" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Linear SVM</div></foreignObject></g></g></g><g class="node" id="src" transform="translate(96.7890625,283.5)" style="opacity: 1;"><rect rx="19.5" ry="19.5" x="-74.6171875" y="-19.5" width="149.234375" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-59.7421875,-9.5)"><foreignObject width="119.484375" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Approssimazione</div></foreignObject></g></g></g></g></g></g></svg>
