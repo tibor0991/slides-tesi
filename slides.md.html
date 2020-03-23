@@ -124,7 +124,8 @@ $\newcommand{\vagcon}{\mathsf{C}}$
 Poiché a volte può essere difficile trovare il giusto contesto, modellare un concetto vago elencando gli individui appartenenti ad esso risulta più facile.
 
 >>>
->>> Spiega cosa è il contesto
+>>> * Spiega cosa è il contesto
+>>> * Concetto vago diff da modellare...
 >>>
 
 ---
@@ -148,8 +149,7 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 ## Descrizione della soluzione
 ![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIHNlbCBmaWxsOiM2RkYsc3Ryb2tlOiMzMzMsc3Ryb2tlLXdpZHRoOjRweFxuXG4gIHNlbCAtLT4gcHJvaiAtLT4gcGNhIC0tPiBzdm0gLS0-IGFwcHJ4XG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIiwiZmxvd2NoYXJ0Ijp7InJhbmtTcGFjaW5nIjoiMjUifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
 ### Selezione
-<p>
-Si selezionano tre sottoinsiemi:
+![Suddivisione degli individui](./img/Selection.svg width="30%")<p>
 
 * $E^{+}$: individui che descrivono il concetto vago.
 
@@ -157,10 +157,10 @@ Si selezionano tre sottoinsiemi:
 
 * $E^{-}$: individui del complemento di $E^{LCS}$
 
+</p>
+
 <hr class="ignore">
 <small>l.c.s. : Least Common Subsumer</small>
-
-</p>
 
 >>>
 >>> * escludo TOP e BOTTOM
@@ -184,8 +184,6 @@ Si selezionano tre sottoinsiemi:
 
 * Grafo -> Tabella
 
-<hr class="ignore">
-<small>*Introdotto in:* Fanizzi, Nicola ; D'Amato, Claudia ; Esposito, Floriana: *Randomized metric induction and evolutionary conceptual clustering for semantic knowledge bases* (2007)</small>
 </p>
 
 ---
@@ -201,7 +199,7 @@ Si selezionano tre sottoinsiemi:
 
 * Componenti ortogonali fra di loro.
 
-* Tramite **whitening**, ogni componente ha varianza unitaria.
+* Applicando il **whitening**, ogni componente ha varianza unitaria.
 </p>
 
 >>>
@@ -213,13 +211,12 @@ Si selezionano tre sottoinsiemi:
 ## Descrizione della soluzione
 ![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIHN2bSBmaWxsOiM2RkYsc3Ryb2tlOiMzMzMsc3Ryb2tlLXdpZHRoOjRweFxuXG4gIHNlbCAtLT4gcHJvaiAtLT4gcGNhIC0tPiBzdm0gLS0-IGFwcHJ4XG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIiwiZmxvd2NoYXJ0Ijp7InJhbmtTcGFjaW5nIjoiMjUifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
 ### Support Vector Machine a kernel lineare
-
-<p>
+![Esempio](./img/svm.png width="35%")<p>
 * Training set: $E^{+} \cup E^{-}$
 
 * Si cerca l'iperpiano che massimizzi la distanza fra $E^{+}$ e $E^{-}$
 
-* Ci interessa solo la distanza dal margine all'iperpiano
+* Ci interessa solo la distanza $d$ fra i support vector e l'iperpiano
 </p>
 
 
@@ -229,22 +226,47 @@ Si selezionano tre sottoinsiemi:
 ![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIHN0eWxlIGFwcHJ4IGZpbGw6IzZGRixzdHJva2U6IzMzMyxzdHJva2Utd2lkdGg6NHB4XG5cbiAgc2VsIC0tPiBwcm9qIC0tPiBwY2EgLS0-IHN2bSAtLT4gYXBwcnhcblxuIiwibWVybWFpZCI6eyJ0aGVtZSI6Im5ldXRyYWwiLCJmbG93Y2hhcnQiOnsicmFua1NwYWNpbmciOiIyNSJ9fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
 ### Ricerca delle approssimazioni
 
-Sia $d$ la distanza da un margine verso l'iperpiano.
+* Indiscernibilità rough -> Similarità per tolleranza
 
-* Si cercano gli individui a distanza $d$ dagli esempi positivi;
+* Similarità per tolleranza determina un *vicinato*
 
+* Si ricercano i vicinati a partire dagli individui di $E^{+}$
 
 ---
 
 ## Descrizione della soluzione
 
-### Ricerca delle approssimazioni
+### Ricerca delle approssimazioni: approssimazione inferiore
+![Vicinato del punto evidenziato.](./img/ricerca_lower.png width="35%")<p>
+* Vicinato di un punto incluso in $E^{+}$ -> il punto appartiene a $\underline{\vagcon}$
 
-Sia $d$ la distanza da un margine verso l'iperpiano.
+* Corrisponde a restrizione universale sul concetto vago.
+</p>
 
-* Si cercano gli individui a distanza $d$ dagli esempi positivi;
+---
 
-* Di questi 
+## Descrizione della soluzione
+
+### Ricerca delle approssimazioni: approssimazione superiore
+![Vicinato del punto evidenziato.](./img/ricerca_upper.png width="35%")<p>
+* Vicinato di un punto interseca $E^{+}$ -> il punto appartiene a $\overline{\vagcon}$
+
+* Corrisponde a restrizione esistenziale sul concetto vago.
+
+</p>
+
+---
+
+## Descrizione della soluzione
+
+### Ricerca delle approssimazioni: approssimazione superiore
+![Vicinato del punto evidenziato.](./img/ricerca_upper_boundary.png width="35%")<p>
+* Vicinato di un punto interseca $E^{+}$ -> il punto appartiene a $\overline{\vagcon}$
+
+* Corrisponde a restrizione esistenziale sul concetto vago.
+
+* Si controllano anche i punti in prossimità del concetto vago considerati dalla precedente operazione.
+</p>
 
 ---
 
@@ -254,15 +276,20 @@ Sia $d$ la distanza da un margine verso l'iperpiano.
 
 ## Implementazione
 
-### Linguaggio di implementazione
-Python 3.8
+### Linguaggi usati
+* Python 3.7 per lo script;
+* Web Ontology Language (OWL) per le ontologie;
 
 ### Librerie utilizzate
 
-* sci-kit
+* scikit-learn
 * pandas
-* numpy
+* numpy & scipy
 * owlready2
+
+>>>
+>>> * Digressione su OWL
+>>>
 
 ---
 
@@ -270,7 +297,7 @@ Python 3.8
 
 ### Software utilizzati
 
-* PyCharm (IDE per Python)
+* PyCharm 2019.3 (IDE per Python)
 * Protegé 5.5.0 (Editor di ontologie)
 * Pellet (Reasoner)
 
@@ -288,17 +315,76 @@ Python 3.8
 
 ### Concetto "Selezione Personale"
 
+* Ontologia "wine.owl"
+* Definire un concetto legato ad un gusto personale
+
+### Concetto "Dieta contro l'ipertensione"
+
+* Ontologia "dieta.owl"
+* Definire un concetto che rappresenti una categoria di cibi adatti a gestire l'ipertensione
+
+>>> 
+>>> * Due concetti da approssimare
+>>> * Dieta iposodica, presa da un sito affidabile
+>>>
+>>>
+
+
+---
+
+## Risultati
+
+### Concetto "Selezione Personale"
+
+![Appross. Superiore ](./img/possibly_personal.png width="100%") ![Appross. Inferiore ](./img/def_personal.png width="100%")
+
 ---
 
 ## Risultati
 
 ### Concetto "Adatto a dieta iposodica"
 
+![Appross. Superiore ](./img/possibly_hypertension.png width="100%") ![Appross. Inferiore ](./img/definitively_hypertension.png width="100%")
+
 ---
 
 # Conclusioni
 
 ---
+
+## Conclusioni
+
+### Pro
+
++ Non è richiesta una conoscenza del dominio elevata
++ Risultati intrinsecamente consistenti
++ (aggiungere altro pro)
+
+### Contro
+
+- Funziona solo su ontologie basate sugli individui
+- Collo di bottiglia dato dal reasoner
+- Similarità calcolata solo in funzione dei concetti
+
+
+>>> 
+>>> * È stato studiato un problema specifico nel contesto del Semantic Web
+>>> * È stata individuata una classe di soluzioni basate sulla teoria dei Rough Sets
+>>> * È stato implementato un metodo basato su Rough DL per la ricerca delle approssimazioni di un concetto incerto
+>>> * Il metodo è stato successivamente testato su alcune ontologie di test
+>>>
+
+---
+
+## Conclusioni
+
+### Sviluppi futuri
+
+* Usare metodi migliori per gestire la scalabilità dell'approccio (IPCA, IKPCA, Sparse data)
+
+* Testare il metodo su esempi concreti e su ontologie di grandi dimensioni (DBPedia, ontologie biomediche)
+
+* 
 
 ---
 
@@ -309,7 +395,7 @@ Python 3.8
     markdeepSlidesOptions = {
         aspectRatio: 16 / 9,
         theme: 'simple_mk2',
-        fontSize: 28,
+        fontSize: 26,
         diagramZoom: 1.0,
         totalSlideNumber: false,
         progressBar: true,
