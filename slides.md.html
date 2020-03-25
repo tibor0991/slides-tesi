@@ -26,7 +26,7 @@
 
 ### Il Semantic Web
 
-La trasformazione del World Wide Web in un ambiente dove le informazioni disponibili siano interpretabili a livello di significato (semanticamente).
+La trasformazione del World Wide Web in un ambiente dove le informazioni disponibili siano interpretabili semanticamente
 
 ![](./img/tag-cloud.png width="65%")
 
@@ -50,7 +50,7 @@ La trasformazione del World Wide Web in un ambiente dove le informazioni disponi
 ---
 ## Semantic Web e Ontologie
 
-### Description Logic
+### Logiche Descrittive
 
 * Una famiglia di linguaggi formali per la rappresentazione di conoscenza
 
@@ -74,7 +74,7 @@ La trasformazione del World Wide Web in un ambiente dove le informazioni disponi
 ### La conoscenza nel mondo reale non è sempre nettamente definita.
 * Conoscenza vaga, incompleta, inconsistente...
 
-### Diversi meccanismi per la trattazione
+### Diversi meccanismi per il trattamento
 * Approcci basati su logica fuzzy
 
 * Approcci probabilistici
@@ -90,18 +90,30 @@ La trasformazione del World Wide Web in un ambiente dove le informazioni disponi
 ---
 
 ## Conoscenza incerta
+
+### Stato dell'arte
+
+* D'Amato, Claudia ; Fanizzi, Nicola ; Esposito, Floriana ; Lukasiewicz, Thomas: Representing uncertain concepts in rough description logics via contextual indiscernibility relations. (2013)
+
+* Bobillo, Fernando ; Straccia, Umberto: Generalized fuzzy rough description logics. (2012)
+
+* Viana, Henrique ; Alcantara, Jõao ; Martins, Ana Teresa: Paraconsistent rough description logic. (2011)
+
+---
+
+## Conoscenza incerta
 $\newcommand{\vagcon}{\mathsf{C}}$
 
 ### Rough DL (Schlobach et al., 2007)
 
 ![Esempio di approssimazione rough](./img/rough.png width="35%")<p>
-* Un estensione delle tradizionali DL basata su una relazione di indiscernibilità;
+* Un estensione delle tradizionali DL basata su una relazione di indiscernibilità
 
-* Concetto vago $\vagcon$ espresso come coppia di approssimazioni $(\underline{\vagcon}, \overline{\vagcon})$;
+* Concetto vago $\vagcon$ espresso come coppia di approssimazioni $(\underline{\vagcon}, \overline{\vagcon})$
 
-* $\overline{\vagcon}$: approssimazione superiore;
+* $\overline{\vagcon}$: approssimazione superiore
 
-* $\underline{\vagcon}$: approssimazione inferiore.
+* $\underline{\vagcon}$: approssimazione inferiore
 </p>
 
 >>>
@@ -121,7 +133,7 @@ $\newcommand{\vagcon}{\mathsf{C}}$
 
 * Ricerca per **estensione**
 
-Poiché a volte può essere difficile trovare il giusto contesto, modellare un concetto vago elencando gli individui appartenenti ad esso risulta più facile.
+Poiché a volte può essere difficile trovare il giusto contesto, modellare un concetto vago elencando gli individui appartenenti ad esso risulta più facile
 
 >>>
 >>> * Spiega cosa è il contesto
@@ -137,10 +149,10 @@ Poiché a volte può essere difficile trovare il giusto contesto, modellare un c
 ## Descrizione della soluzione
 
 ### Cosa si vuole ottenere?
-L'approssimazione superiore e l'approssimazione inferiore di un concetto vago modellato per estensione.
+L'approssimazione superiore e l'approssimazione inferiore di un concetto vago modellato per estensione
 
 ### Con quale metodo?
-Algoritmo implementato in Python che, data un'enumerazione di individui e un'ontologia, apprenda una relazione di similarità che permetta di usare i meccanismi della Rough DL.
+Algoritmo implementato in Python che, data un'enumerazione di individui e un'ontologia, apprenda una relazione di similarità che permetta di usare i meccanismi della Rough DL
 
 ![Passaggi dell'algoritmo](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgc2VsKFtTZWxlemlvbmVdKVxuICBwcm9qKFtQcm9pZXppb25lXSlcbiAgcGNhKFtTY2FsaW5nICYgUENBXSlcbiAgc3ZtKFtMaW5lYXIgU1ZNXSlcbiAgYXBwcngoW0FwcHJvc3NpbWF6aW9uZV0pXG4gIFxuXG4gIHNlbCAtLT4gcHJvaiAtLT4gcGNhIC0tPiBzdm0gLS0-IGFwcHJ4XG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIiwiZmxvd2NoYXJ0Ijp7InJhbmtTcGFjaW5nIjoiMjUifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
 
@@ -151,7 +163,7 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 ### Selezione
 ![Suddivisione degli individui](./img/Selection.svg width="30%")<p>
 
-* $E^{+}$: individui che descrivono il concetto vago.
+* $E^{+}$: individui che descrivono il concetto vago
 
 * $E^{LCS}$: individui appartenenti al l.c.s. emergente da $E^{+}$
 
@@ -160,7 +172,7 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 </p>
 
 <hr class="ignore">
-<small>l.c.s. : Least Common Subsumer</small>
+<small>l.c.s. : Least Common Subsumer, concetto più specifico dal quale sussumono tutti gli argomenti</small>
 
 >>>
 >>> * escludo TOP e BOTTOM
@@ -240,7 +252,7 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 ![Vicinato del punto evidenziato.](./img/ricerca_lower.png width="35%")<p>
 * Vicinato di un punto incluso in $E^{+}$ -> il punto appartiene a $\underline{\vagcon}$
 
-* Corrisponde a restrizione universale sul concetto vago.
+* Corrisponde a restrizione universale sul concetto vago
 </p>
 
 ---
@@ -251,7 +263,7 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 ![Vicinato del punto evidenziato.](./img/ricerca_upper.png width="35%")<p>
 * Vicinato di un punto interseca $E^{+}$ -> il punto appartiene a $\overline{\vagcon}$
 
-* Corrisponde a restrizione esistenziale sul concetto vago.
+* Corrisponde a restrizione esistenziale sul concetto vago
 
 </p>
 
@@ -263,9 +275,9 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 ![Vicinato del punto evidenziato.](./img/ricerca_upper_boundary.png width="35%")<p>
 * Vicinato di un punto interseca $E^{+}$ -> il punto appartiene a $\overline{\vagcon}$
 
-* Corrisponde a restrizione esistenziale sul concetto vago.
+* Corrisponde a restrizione esistenziale sul concetto vago
 
-* Si controllano anche i punti in prossimità del concetto vago considerati dalla precedente operazione.
+* Si controllano anche i punti in prossimità del concetto vago considerati dalla precedente operazione
 </p>
 
 ---
@@ -277,8 +289,8 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 ## Implementazione
 
 ### Linguaggi usati
-* Python 3.7 per lo script;
-* Web Ontology Language (OWL) per le ontologie;
+* Python 3.7 per lo script
+* Web Ontology Language (OWL) per le ontologie
 
 ### Librerie utilizzate
 
@@ -332,7 +344,7 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 
 ---
 
-## Risultati
+## Output
 
 ### Concetto "Selezione Personale"
 
@@ -340,7 +352,7 @@ Algoritmo implementato in Python che, data un'enumerazione di individui e un'ont
 
 ---
 
-## Risultati
+## Output
 
 ### Concetto "Adatto a dieta iposodica"
 
